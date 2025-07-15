@@ -33,4 +33,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-You can acess my deploy here :  --  (https://my-generator-profile-next-gikj2c8rq.vercel.app/)
+You can acess my deploy here :  --  https://my-generator-pro-git-2fe63b-victor-gonzalez-velazquezs-projects.vercel.app?_vercel_share=Owul4TICjCERNMgeZiGLxs3wAsD7g4Uf
