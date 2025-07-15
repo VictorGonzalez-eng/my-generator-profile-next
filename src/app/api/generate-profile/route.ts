@@ -52,16 +52,17 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ profile: profileData });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error to generate profile with Gemini:', error);
-    if (error instanceof SyntaxError && error.message.includes('JSON')) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    if (error instanceof SyntaxError && errorMessage.includes('JSON')) {
         return NextResponse.json(
-            { error: 'Fail to process a response with Gemini (JSON invalid). Try again.', details: error.message },
+            { error: 'Fail to process a response with Gemini (JSON invalid). Try again.', details: errorMessage },
             { status: 500 }
         );
     }
     return NextResponse.json(
-      { error: 'Fail to generate profile with gemini', details: error.message },
+      { error: 'Fail to generate profile with gemini', details: errorMessage},
       { status: 500 }
     );
   }

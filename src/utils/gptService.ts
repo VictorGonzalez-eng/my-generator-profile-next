@@ -1,4 +1,6 @@
-export async function generateProfileFromWebsite(url: string): Promise<any> {
+import { Profile } from '../components/ProfileCard';
+
+export async function generateProfileFromWebsite(url: string): Promise<Profile> {
   const response = await fetch("/api/generate-profile", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
