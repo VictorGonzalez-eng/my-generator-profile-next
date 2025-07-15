@@ -2,7 +2,7 @@
 
 import React from "react";
 
-type Profile = {
+export type Profile = {
   company_name: string | null;
   company_description: string | null;
   service_line: string[];
@@ -14,7 +14,7 @@ type Profile = {
 
 type Props = {
   profile: Profile;
-  onChange: (profile: any) => void;
+  onChange: (profile: Profile) => void;
 };
 
 export function ProfileCard({ profile, onChange }: Props) {
@@ -116,7 +116,7 @@ export function ProfileCard({ profile, onChange }: Props) {
         />
       </div>
       <p className="text-sm text-gray-500 mt-1">
-        **PS:** Use comma ',' if you want to separate items (Service line works too).
+        **PS:** Use comma (,) if you want to separate items (Service line works too).
       </p>
       <button
         className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"

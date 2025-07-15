@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState } from "react";
+import { Profile } from './ProfileCard';
 import { generateProfileFromWebsite } from "../utils/gptService";
 
 type Props = {
-  onProfileGenerated: (profile: any) => void;
+  onProfileGenerated: (profile: Profile) => void;
 };
 
 export function ProfileForm({ onProfileGenerated }: Props) {
